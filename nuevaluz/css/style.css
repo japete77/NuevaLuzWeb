@@ -1,0 +1,147 @@
+/*   |              |    
+  ___|     _    _   |___ 
+ |   | |  / \  / \  |   |
+ |   | | /____/___\ |   | 
+  \  | |     /\     |  /  
+   \_| |  \_/  \_/  |_/ 
+  
+/* CONTENIDO COMUN */
+* {padding:0px; margin:0px; border:none; list-style:none; text-decoration:none}
+body { margin: 0px; background:  #AF916E url(../images/bgy.png) 50% 0 repeat-x;  font-family: Dosis, Tahoma, sans-serif; font-size:19px }
+
+#contenedor {margin:0 auto; width:1024px;  }
+
+.cabecera { width:1000px; height:341px; margin:0 auto }
+
+.logoimg {background: url(../images/cabecera.png) no-repeat; width:1000px; height:330px;box-shadow: 0 5px 25px #8C7662}
+#usuarios { width:145px; height:30px; float:right; color: #FFF; font-size:24px; padding: 13px 30px 13px 38px; text-shadow:0 -1px 0 #026AAC  }
+#usuarios:hover { color: #3A250F; text-shadow: none}
+
+#nav { background: url(../images/botonera.png) no-repeat; width:1000px; height:61px;text-indent:-999999px; position:relative; top:-50px; z-index:1 }
+#nav li { float:left; height: 61px;margin-right:1px}
+#nav #contacta, #nav #contacta-activo {margin-right:0}
+
+#inicio {width:123px}
+#historia { width:239px}
+#colaborar { width:229px}
+#noticias { width:138px}
+#material { width:128px}
+#contacta { width:138px}
+
+#inicio:hover, #inicio-activo {background:url(../images/botonera.png) 0px 61px; width:123px}
+#historia:hover, #historia-activo { background:url(../images/botonera.png) -124px 61px; width:239px}
+#colaborar:hover, #colaborar-activo { background:url(../images/botonera.png) -364px 61px; width:229px}
+#noticias:hover, #noticias-activo { background:url(../images/botonera.png) -594px 61px;width:138px }
+#material:hover, #material-activo { background:url(../images/botonera.png) -733px 61px;width:128px}
+#contacta:hover, #contacta-activo { background:url(../images/botonera.png) -862px 61px;width:138px}
+
+.centrado, h1, p, h5 { color: #222; }
+
+.hoja { background: url(../images/agujeros.png) 0 7px repeat-y; width:795px; padding:50px 90px 0; 
+min-height:696px;  margin:0 auto; position:relative; top:-7px; box-shadow: 0 5px 50px #8C7662;}
+  
+#salidaopa {-webkit-animation-name: salidaopa; -webkit-animation-duration:1s; -webkit-animation-iteration-count:1; -webkit-animation-timing-function:ease-in-out;
+-moz-animation-name: salidaopa; -moz-animation-duration:1s; -moz-animation-iteration-count:1; -moz-animation-timing-function:ease-in-out;
+-ms-animation-name: salidaopa; -ms-animation-duration:1s; -ms-animation-iteration-count:1; -ms-animation-timing-function:ease-in-out;
+-o-animation-name: salidaopa; -o-animation-duration:1s; -o-animation-iteration-count:1; -o-animation-timing-function:ease-in-out;}
+@-webkit-keyframes salidaopa { from { -webkit-transform:translateY(-32px); opacity:0} 
+to {-webkit-transform: translateY(0px); opacity:1} }
+@-moz-keyframes salidaopa { from { -moz-transform:translateY(-32px); opacity:0} 
+to {-moz-transform: translateY(0px); opacity:1} }
+@-ms-keyframes salidaopa { from { -ms-transform:translateY(-32px); opacity:0} 
+to {-ms-transform: translateY(0px); opacity:1} }
+@-o-keyframes salidaopa { from { -o-transform:translateY(-32px); opacity:0} 
+to {-o-transform: translateY(0px); opacity:1} }
+
+#salida {-webkit-animation-name: salida; -webkit-animation-duration:1s; -webkit-animation-iteration-count:1; -webkit-animation-timing-function:ease-in-out;
+-moz-animation-name: salida; -moz-animation-duration:1s; -moz-animation-iteration-count:1; -moz-animation-timing-function:ease-in-out;
+-ms-animation-name: salida; -ms-animation-duration:1s; -ms-animation-iteration-count:1; -ms-animation-timing-function:ease-in-out;
+-o-animation-name: salida; -o-animation-duration:1s; -o-animation-iteration-count:1; -o-animation-timing-function:ease-in-out;}
+
+@-webkit-keyframes salida { from { -webkit-transform:translateY(-32px)} 
+to {-webkit-transform: translateY(0px)} }
+@-moz-keyframes salida { from { -moz-transform:translateY(-32px)} 
+to {-moz-transform: translateY(0px)} }
+@-ms-keyframes salida { from { -ms-transform:translateY(-32px)} 
+to {-ms-transform: translateY(0px)} }
+@-o-keyframes salida { from { -o-transform:translateY(-32px)} 
+to {-o-transform: translateY(0px)} }
+
+
+.cajas {width:840px; margin:0 auto; min-height:300px}
+#cajaenlaces { height:300px}
+.caja { width: 230px; float:left}
+.cajacentral { width: 230px; margin: 0 50px; float:left}
+.cajadoble { width:510px; float:left}
+.cajaderecha {width: 230px; float:left; margin-left:50px; min-height:300px; }
+.cajaderecha:active {-webkit-transform: perspective(200px) rotateY(5deg); -webkit-transform-origin: 0% 50%; -webkit-transition:all 0.3s ease; }
+#pa370 { height:370px}
+
+
+
+
+/* INICIO */
+.titbien {padding-bottom: 30px; font-size:40px}
+#cajaenlaces .cajadoble {  margin-right:50px;box-shadow:0 1px 2px #B5B5B5}
+#cajabartimeo .caja {  margin-right:50px;}
+#cajabartimeo .cajadoble {margin-bottom: 20px}
+#dboletin, #imgvideo { height:300px}
+#imgvideo { width:510px; display:block; background: #007dfd url(../images/videobuenasnoticiastv.jpg) no-repeat ; }
+a#imgvideo:hover { background:url(../images/videobuenasnoticiastv.jpg) 0 -300px;}
+
+.piefoto { font-family:"Lucida Grande", sans-serif; font-size:12px;color:#4D4D4D; margin:10px 0 40px}
+
+#dboletin { background:  #E6E6E6 url(../images/pdf_ico.gif) 20px 55px no-repeat; box-shadow:0 1px 2px #B5B5B5 }
+#dboletin:hover { background-color:#F2F2F2; }
+#txtdboletin {padding:55px 0 50px 72px ;font-size:30px; color: #333}
+
+.cgrande {width:66px; height:66px; background-color: #F2F2F2; border-radius:33px; float:right; margin-right:20px; box-shadow: inset 0 1px 0px #CCC }
+.cpeque {width:50px; height:50px; background-color: #46B4F0; border-radius:25px; margin:8px; color:#FFF; text-align:center; font-size:35px; box-shadow: 0 1px 1px #B4B4B4; text-shadow: 0 -1px 1px #B4B4B4}
+#dboletin:hover .cgrande { background-color: #FAFAFA}
+#dboletin:hover #txtdboletin {color:}
+
+hr { border:solid }
+h1 { font-size:30px; font-weight:500;color:#009BE1}
+h3 { font-weight:normal}
+strong { font-weight:600; }
+h2 { margin-top:80px}
+
+
+/* OTRAS */
+#proysembra { height:790px; }
+#proysembra .cajadoble {margin:0 50px 0 0}
+#bannersembra {  padding-top:8px}
+
+/* NOTICIAS */
+.cajanoticias {width:840px; margin:0 auto; min-height:350px}
+.cajaderecha img { padding-top:8px}
+.cajanoticias a { color:#009BE1}
+.cajanoticias a:hover { color:#C89B69}
+
+.pie { margin:0 auto 20px; width:400px; font: 12px "Lucida Grande", sans-serif; color:#FFF}
+.pie a {  color:#FFF}
+.pie img { position: relative; top:10px}
+
+#spaceimg {margin-left:15px}
+.imgtext img {float:left;margin-right:12px}
+.imgtext p { margin-left:10px}
+
+/* CONTACTO */
+#formContacto { width:400px; margin-left:200px}
+select { width: 115px; height: 30px; font-size: 14px; margin-right: 5px; background: #d6bd99;}
+input { border-radius:10px}
+input:focus, textarea:focus {outline:none}
+input, textarea {border:thin solid; border-color: #999; width:315px; height:50px; padding-left: 15px; margin: 5px 0; font-family:Dosis, Tahoma, sans-serif;font-size:20px; color: #3C3C3C; }
+#formContacto textarea{ padding-top: 8px; height:80px; border-radius:10px}
+#botonEnvio { width:280px; height:65px; margin-left:25px; background: url(../images/botonenvio.png) no-repeat; text-indent:-49999px; border: none; border-radius: 0}
+#botonEnvio:hover { background:url(../images/botonenvio.png) 0 -65px no-repeat;}
+#botonEnvio:active { background:url(../images/botonenvio.png) 0 -130px no-repeat;}
+
+hr { height:1px; border:none; background-color:#C89B69; margin-bottom:30px}
+
+#enlaces { width:795px; height:488px }
+#enlaces img { float:left}
+#enlaces p { float:left; margin-left:15px}
+#enlaces a { width:265px; height:125px;float:left; }
+#enlaces #etorch { width:500px; margin-bottom:50px}
+#enlaces a:hover p { color:#009BE1 }

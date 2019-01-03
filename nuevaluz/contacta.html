@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="content-language" content="es" />
+	<meta name="description" content="Obra evangélica de ayuda espiritual para ciegos y disminuidos visuales." lang="es" />
+	<meta name="keywords" lang="es" content="obra, evangélica, ciegos, disminuidos visuales, cristiano, biblia, braille" />
+	<title>Nueva luz. Obra evangélica de ayuda espiritual para ciegos y disminuidos visuales.</title>
+	<link rel="stylesheet" href="css/style.css" media="screen" />
+	<link href='http://fonts.googleapis.com/css?family=Dosis:600,400' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div id="contenedor">
+
+		<div class="cabecera">
+			<div class="logoimg">
+				<a id="usuarios" href="http://nluz.dyndns.org">acceso usuarios</a>
+			</div>
+			<div id="nav">
+				<ul>
+					<a href="index.html">
+						<li id="inicio">Inicio</li>
+					</a>
+					<a href="un-poco-de-historia.html">
+						<li id="historia">Un poco de historia</li>
+					</a>
+					<a href="como-colaborar.html">
+						<li id="colaborar">¿Cómo colaborar?</li>
+					</a>
+					<a href="noticias.html">
+						<li id="noticias">Noticias</li>
+					</a>
+					<a href="material.html">
+						<li id="material">Material</li>
+					</a>
+					<li id="contacta-activo">Contacta</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="hoja" id="salida">
+
+			<div class="cajas" id="pa370">
+				<div class="caja">
+					<h1>Contacta</h1>
+					<br /> NUEVA LUZ
+					<br /> Apartado de correos 548
+					<br /> 29670 - San Pedro Alcántara
+					<br /> Málaga - España
+					<br />
+					<br /> Telf. 952781112
+					<br /> Email: nuevaluz@nuevaluz.org
+					<br />
+					<br />
+				</div>
+				<div class="cajadoble">
+					<div id="formContacto">
+						<input type="text" name="name" id="nombre" class="camposContacto" value="nombre*" onfocus="if (this.value == 'nombre*') {this.value = '';}"
+						 onblur="if (this.value == '') {this.value = 'nombre*';}" required="required" />
+						<input type="text" name="email" id="email" class="camposContacto" value="email*" onfocus="if (this.value == 'email*') {this.value = '';}"
+						 onblur="if (this.value == '') {this.value = 'email*';}" required="required" />
+						<textarea name="comments" id="comentarios" class="camposContacto" value="comentarios..." onfocus="if (this.value == 'comentarios...') {this.value = '';}"
+						 onblur="if (this.value == '') {this.value = 'comentarios...';}">comentarios...</textarea>
+						<input id="botonEnvio" value="enviar" onclick="send_email()" />
+					</div>
+				</div>
+			</div>
+
+			<hr />
+			<h1>Webs de interés</h1>
+			<br />
+			<div id="enlaces">
+				<a href="http://www.lacause.org/" target="_blank">
+					<img src="images/enlaces/logo-la-cause.png" />
+					<p>Ministerio
+						<br />entre ciegos
+						<br />de Francia</p>
+				</a>
+				<a id="etorch" href="http://www.torchtrust.org/" target="_blank">
+					<img src="images/enlaces/logo-torch.gif" />
+					<p>Ministerio
+						<br />entre ciegos
+						<br />de habla inglesa</p>
+				</a>
+				<a href="http://www.unionbiblica.com/" target="_blank">
+					<img src="images/enlaces/logo-unionbiblica.png" />
+					<p>Unión
+						<br />bíblica</p>
+				</a>
+				<a href="http://www.caminemosjuntas.org/" target="_blank">
+					<img src="images/enlaces/logo-caminemosjuntas.png" />
+					<p>Revista para
+						<br />mujeres
+						<br />Caminemos
+						<br />Juntas</p>
+				</a>
+				<a href="http://www.canaldevida.org/cdv/" target="_blank">
+					<img src="images/enlaces/logo-buenasnoticias.png" />
+					<p>Programa
+						<br />de las iglesias
+						<br />evangélicas
+						<br />en TVE</p>
+				</a>
+				<a href="http://www.edificacioncristiana.com/" target="_blank">
+					<img src="images/enlaces/logo-edificacioncristiana.png" />
+					<p>Revista
+						<br />Edificación
+						<br />Cristiana</p>
+				</a>
+				<a href="http://www.esglesia-gracia.org/" target="_blank">
+					<img src="images/enlaces/logo-iglesiadelagracia.png" />
+					<p>Iglesia evangélica
+						<br />C/ Terol
+						<br />de Barcelona</p>
+				</a>
+				<a href="http://www.corogospeldemadrid.com/" target="_blank">
+					<img src="images/enlaces/logo-corogospel.png" />
+					<p>Coro
+						<br />Gospel
+						<br />de Madrid</p>
+				</a>
+
+			</div>
+
+
+		</div>
+
+		<div class="pie">
+			<a>Nueva Luz © 2014</a> | nuevaluz@nuevaluz.org |
+			<a href="http://www.diseb.com" title="diseño web diseb">
+				<span>diseño web </span>
+				<img src="images/logogris-blanco.png" />
+			</a>
+		</div>
+	</div>
+
+
+</body>
+
+</html>
+<script>
+	function send_email() {
+		if (validar()) {
+			var nameValue = document.getElementById("nombre").value;
+			var emailValue = document.getElementById("email").value;
+			var commentsValue = document.getElementById("comentarios").value;
+
+			const url = 'https://o4nluq3j81.execute-api.eu-west-1.amazonaws.com/live';
+
+			const data = {
+				subject: 'Contacto nuevaluz.org',
+				body: `Formulario de contacto web Nueva Luz:
+
+Nombre: ${nameValue}
+Email: ${emailValue}
+
+Mensaje: ${commentsValue}
+`
+			};
+
+			const params = {
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},
+				method: 'POST',
+				body: JSON.stringify(data)
+			}
+
+			fetch(url, params).then(data => {
+				if (data.status == 200) {
+					document.getElementById("nombre").value = '';
+					document.getElementById("email").value = '';
+					document.getElementById("comentarios").value = '';
+
+					alert('El mensaje ha sido enviado');
+
+				}
+				else {
+					alert('Error enviando el mensaje, inténtalo mas tarde');
+				}
+			});
+		}
+	}
+
+	function validar() {
+
+		var todo_correcto = true;
+
+		if (document.getElementById('nombre').value.length < 3) {
+			todo_correcto = false;
+		}
+
+		var expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+		var email = document.getElementById('email').value;
+		if (!expresion.test(email)) {
+			todo_correcto = false;
+		}
+
+		if (document.getElementById('comentarios').value.length < 15) {
+			todo_correcto = false;
+		}
+
+		if (!todo_correcto) {
+			alert('Algunos campos no son correctos, rellena todo el formulario');
+		}
+
+		return todo_correcto;
+	}
+</script>
+<script>
+	(function (i, s, o, g, r, a, m) {
+	i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+		(i[r].q = i[r].q || []).push(arguments)
+	}, i[r].l = 1 * new Date(); a = s.createElement(o),
+		m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+	ga('create', 'UA-50992964-1', 'nuevaluz.org');
+	ga('send', 'pageview');
+</script>

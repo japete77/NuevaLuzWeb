@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="content-language" content="es" />
+    <meta name="description" content="Obra evangélica de ayuda espiritual para ciegos y disminuidos visuales." lang="es" />
+    <meta name="keywords" lang="es" content="obra, evangélica, ciegos, disminuidos visuales, cristiano, biblia, braille" />
+    <title>Nueva luz. Obra evangélica de ayuda espiritual para ciegos y disminuidos visuales.</title>
+    <link rel="stylesheet" href="css/style.css" media="screen" />
+    <link href='http://fonts.googleapis.com/css?family=Dosis:600,400' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div id="contenedor">
+
+        <div class="cabecera">
+            <div class="logoimg">
+                <a id="usuarios" href="http://audioteca.nuevaluz.org.s3-website-eu-west-1.amazonaws.com">acceso usuarios</a>
+            </div>
+            <div id="nav">
+                <ul>
+                    <a href="index.html">
+                        <li id="inicio">Inicio</li>
+                    </a>
+                    <a href="un-poco-de-historia.html">
+                        <li id="historia">Un poco de historia</li>
+                    </a>
+                    <a href="como-colaborar.html">
+                        <li id="colaborar">¿Cómo colaborar?</li>
+                    </a>
+                    <a href="noticias.html">
+                        <li id="noticias">Noticias</li>
+                    </a>
+                    <a href="material.html">
+                        <li id="material">Material</li>
+                    </a>
+                    <a href="contacta.html">
+                        <li id="contacta">Contacta</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+        <div class="hoja" id="salida">
+
+
+            <h1>Proyecto Bartimeo</h1>
+            Este proyecto, tiene como objetivo dar la oportunidad a los hermanos de
+            <strong>“apadrinar”</strong> los gastos que supone el material que las personas ciegas y de baja visión reciben de Nueva
+            Luz.
+            <br> Hemos calculado que el importe medio de preparar y enviar los materiales asciende a
+            <strong>5 € mensuales</strong> por cada persona que los recibe. Buscamos a creyentes que sientan como suya esta labor
+            y quieran “apadrinar” a una o más personas que, mes a mes, reciben los materiales de evangelización y/o de edificación.
+            <br>
+            <br> Para muchos de ellos, Nueva Luz es el único medio de tener contacto con la Palabra de Dios, así que te animamos
+            a colaborar con nosotros en esta preciosa labor de llevar el Evangelio a este colectivo tan especial.
+            <br>
+            <br> Puedes enviar tu apadrinamiento a la siguiente cuenta bancaria de La Caixa a nombre de Nueva Luz indicando en
+            el concepto APADRINAMIENTO: ES95 2100 2329 6102 0012 5937
+            <br>
+            <br>
+
+            <hr> O puedes domiciliar tu ayuda rellenando tus datos:
+            <br>
+            <br>
+            <div id="formContsacto">
+                <input type="text" name="name" id="Nombre" class="camposContacto" value="Nombre*" onfocus="if (this.value == 'Nombre*') {this.value = '';}"
+                    onblur="if (this.value == '') {this.value = 'Nombre*';}" required />
+                <input type="text" name="DNI" id="DNI" class="camposContacto" value="DNI*" onfocus="if (this.value == 'DNI*') {this.value = '';}"
+                    onblur="if (this.value == '') {this.value = 'DNI*';}" required />
+
+                <input type="text" name="email" id="Email" class="camposContacto" value="Email*" onfocus="if (this.value == 'Email*') {this.value = '';}"
+                    onblur="if (this.value == '') {this.value = 'Email*';}" required="required" />
+                <input type="text" name="telefono" id="Telefono" class="camposContacto" value="Teléfono*" onfocus="if (this.value == 'Teléfono*') {this.value = '';}"
+                    onblur="if (this.value == '') {this.value = 'Teléfono*';}" required />
+                <br>
+                <br> Quiero apadrinar los gastos de:
+
+                <select id="cantidad" name="cantidad">
+                    <option value="5euros">1 material</option>
+                    <option value="10euros">2 materiales</option>
+                    <option value="15euros">3 materiales</option>
+                    <option value="20euros">4 materiales</option>
+                    <option value="25euros">5 materiales</option>
+                    <option value="50euros">10 materiales</option>
+                </select>
+                con un valor de 5 € al mes por material.
+                <br>
+                <br>
+                <input type="text" name="spanish_iban" id="IBAN" maxlength="24" class="camposContacto" value="Número cuenta IBAN*" onfocus="if (this.value == 'Número cuenta IBAN*') {this.value = '';}"
+                    onblur="if (this.value == '') {this.value = 'Número cuenta IBAN*';}" required />
+                <br>
+                <span style="font-size:14px; color:grey">El número de IBAN debe comenzar con ES y constar de 24 dígitos sin espacios.</span>
+                <br>
+                <br>
+                <input type="checkbox" name="checkbox" id="myCheck" style="width: 25px; height: 15px;">
+                <span style="font-size:16px; color:grey">Acepto las condiciones* y la
+                    <a href="politica-privacidad.html">política de privacidad</a>
+                    <span>
+                        <br>
+                        <br>
+                        <input id="botonEnvio" value="Submit" onclick="send_email()"/>
+                        <br>
+                        <br>
+            </div>
+            <span style="font-size:14px; color:grey">*Autorizo a la Entidad Religiosa Asociativa Nueva Luz con CIF R2801714C desde la fecha presente y con carácter
+                indefinido en tanto no comunique otra cosa, a efectuar todos los cobros de mi apadrinamiento en el Proyecto
+                Bartimeo mediante recibo bancario a la cuenta bancaria especificada en la presente autorización, según lo
+                exige la Ley de Servicios de Pagos vigente.
+            </span>
+            <br>
+            <br>
+        </div>
+        <div class="pie">
+            <a>Nueva Luz © 2018</a> | nuevaluz@nuevaluz.org |
+            <a href="http://www.diseb.com" title="diseño web diseb">
+                <span>diseño web </span>
+                <img src="images/logogris-blanco.png" />
+            </a>
+        </div>
+
+
+
+</body>
+<script>
+    function send_email() {
+		if (validateForm()) {
+			var name = document.getElementById("Nombre").value;
+			var dni = document.getElementById("DNI").value;
+			var email = document.getElementById("Email").value;
+			var telefono = document.getElementById("Telefono").value;
+			var iban = document.getElementById("IBAN").value;
+            var e = document.getElementById("cantidad");
+            var cantidad = e.options[e.selectedIndex].value;
+            var message = `Datos domiciliación:
+
+Nombre: ${name}
+DNI: ${dni}
+Teléfono: ${telefono}
+Email: ${email}
+
+Numero de IBAN: ${iban}
+Quiero colaborar cada mes con: ${cantidad}
+`;
+
+			const url = 'https://o4nluq3j81.execute-api.eu-west-1.amazonaws.com/live';
+
+			const data = {
+				subject: 'Colaboración Proyecto Bartimeo',
+				body: message
+			};
+
+			const params = {
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},
+				method: 'POST',
+				body: JSON.stringify(data)
+			}
+
+			fetch(url, params).then(data => {
+				if (data.status == 200) {
+					document.getElementById("Nombre").value = '';
+					document.getElementById("DNI").value = '';
+					document.getElementById("Email").value = '';
+					document.getElementById("Telefono").value = '';
+					document.getElementById("IBAN").value = '';
+                    document.getElementById("myCheck").checked = false;
+
+					alert('Gracias por tu colaboración. Tus datos han sido enviados.');
+
+				}
+				else {
+					alert('Error enviando datos, inténtalo mas tarde');
+				}
+			})
+            .catch(error => {
+                alert('Error enviando datos, inténtalo mas tarde');
+            })
+		}
+	}
+
+    function validateForm() {
+        // Validate name
+        var name_value = document.getElementById('Nombre').value;
+        var int_name = new Number(name_value);
+        if (!isNaN(int_name) || int_name < 0 || int_name == "" || name_value == "Nombre*") {
+            alert("Introduzca un nombre correcto");
+            return false;
+        }
+        // Validate DNI
+        var DNI_value = document.getElementById('DNI').value;
+        if (DNI_value == "DNI*") {
+            alert("Introduzca un DNI");
+            return false;
+        }
+        // Validate email
+        var email_value = document.getElementById('Email').value;
+        if (email_value == "Email*") {
+            alert("Introduzca un email");
+            return false;
+        }
+        // Validate telefono
+        var telefono_value = document.getElementById('Telefono').value;
+        if (telefono_value == "Teléfono*") {
+            alert("Introduzca un teléfono");
+            return false;
+        }
+        // Validate IBAN
+        var spa_iban_value = document.getElementById('IBAN').value;
+        if (spa_iban_value.length != 24 || spa_iban_value.substring(0, 2) != "ES" || isNaN(spa_iban_value.substring(2, 25))) {
+            alert("Introduzca un IBAN correcto");
+            return false;
+        }
+        // Validate checkbox
+        if (!document.getElementById("myCheck").checked) {
+            alert("Acepta las condiciones y la política de privacidad");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+</html>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-50992964-1', 'nuevaluz.org');
+    ga('send', 'pageview');
+</script>

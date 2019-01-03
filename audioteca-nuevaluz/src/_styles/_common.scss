@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    border: 0;
+    font-family: Dosis, Tahoma, sans-serif; 
+    font-size: 19px;
+}
+
+.row {
+    display: flex;
+    margin: 10px 0 10px 0;
+
+    &--centered {
+        justify-content: center;
+    }
+}
