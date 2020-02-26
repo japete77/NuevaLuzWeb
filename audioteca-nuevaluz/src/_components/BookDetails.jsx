@@ -23,13 +23,13 @@ export class BookDetails extends React.Component {
             .then(response => {
                 this.setState({
                     loading: false,
-                    Id: response.Id,
-                    Title: response.Title,
-                    Author: response.Author.Name,
-                    Editorial: response.Editorial,
-                    Comments: response.Comments,
-                    LengthHours: response.LengthHours,
-                    LengthMins: response.LengthMins
+                    Id: response.id,
+                    Title: response.title,
+                    Author: response.author.name,
+                    Editorial: response.editorial,
+                    Comments: response.comments,
+                    LengthHours: response.lengthHours,
+                    LengthMins: response.lengthMins
                 });
             });
     }
@@ -39,7 +39,7 @@ export class BookDetails extends React.Component {
             this.setState({ downloading: true });
             audiotecaService.getLink(id)
                 .then(response => {
-                    this.setState({ downloading: false, link: response.AudioBookLink });
+                    this.setState({ downloading: false, link: response.audioBookLink });
                     document.getElementById('link').click();
                 });
         } else {
@@ -52,8 +52,8 @@ export class BookDetails extends React.Component {
             this.setState({ downloading: true });
             audiotecaService.getLink(id)
                 .then(response => {
-                    this.setState({ downloading: false, link: response.AudioBookLink });
-                    navigator.clipboard.writeText(response.AudioBookLink);
+                    this.setState({ downloading: false, link: response.audioBookLink });
+                    navigator.clipboard.writeText(response.audioBookLink);
                 });
         } else {
             navigator.clipboard.writeText(this.state.link);
@@ -90,7 +90,8 @@ export class BookDetails extends React.Component {
                                         </div>
                                 }
                                 <a id="link" href={link}></a>
-                            </div>                            <Typography color="textSecondary" gutterBottom>Duración: {LengthHours} horas {LengthMins} minutos</Typography>
+                            </div>
+                            <Typography color="textSecondary" gutterBottom>Duración: {LengthHours} horas {LengthMins} minutos</Typography>
                             <Typography color="textSecondary" gutterBottom>Autor: {Author}</Typography>
                             <Typography color="textSecondary" gutterBottom>Editorial: {Editorial}</Typography>
                             <Typography component="p">{Comments}</Typography>

@@ -1,3 +1,3 @@
 export default {
-    api_url: 'https://jvrr26o3jl.execute-api.eu-west-1.amazonaws.com/production'
+    api_url: 'https://1dbbwygss8.execute-api.eu-west-1.amazonaws.com/Prod/api/v1/fonoteca/'
 }

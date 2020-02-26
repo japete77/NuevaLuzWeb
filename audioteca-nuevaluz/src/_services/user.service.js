@@ -1,9 +1,10 @@
 import config from 'react-global-configuration';
-import { stringify } from 'querystring';
+// import { stringify } from 'querystring';
 import { audiotecaConstants } from '../_constants/audioteca.constants';
 
 export const userService = {
-    login
+    login,
+    updatePassword
 };
 
 function login(username, password) {
@@ -13,21 +14,44 @@ function login(username, password) {
         body: JSON.stringify({ user: username, password: password })
     };
 
-    return fetch(`${config.get('api_url')}/login`, requestOptions)
+    return fetch(`${config.get('api_url')}login`, requestOptions)
         .then(handleResponse)
         .then(response => {
             // login successful if success flag is true
-            if (response.Success) {
+            if (response.success) {
                 // store session token in local storage to keep user logged in between page refreshes
-                localStorage.setItem(audiotecaConstants.sessionKey, response.Session);
+                localStorage.setItem(audiotecaConstants.sessionKey, response.session);
             }
 
             return response;
         })
         .catch(error => {
             return {
-                Success: false,
-                Message: 'Error accediendo al servicio de la audioteca'
+                success: false,
+                message: 'Error accediendo al servicio de la audioteca'
+            }
+        });
+}
+
+function updatePassword(password) {
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ session: localStorage.getItem(audiotecaConstants.sessionKey), newPassword: password })
+    };
+
+    return fetch(`${config.get('api_url')}change-password`, requestOptions)
+        .then(handleResponse)
+        .then(response => {
+            // login successful if success flag is true
+            return {
+                success: true                
+            }
+        })
+        .catch(error => {
+            return {
+                success: false,
+                message: 'Error accediendo al servicio de la audioteca'
             }
         });
 }

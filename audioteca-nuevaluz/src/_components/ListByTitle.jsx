@@ -34,19 +34,19 @@ export class ListByTitle extends React.Component {
             if (this.state.text) {
                 audiotecaService.searchByTitle(this.state.text, this.state.index, audiotecaConstants.pageSize).then(result => {
                     this.setState({
-                        index: this.state.index + result.Titles.length,
+                        index: this.state.index + result.titles.length,
                         loading: false,
-                        Total: result.Total, 
-                        Titles: this.state.Titles.concat(result.Titles)
+                        Total: result.total, 
+                        Titles: this.state.Titles.concat(result.titles)
                     });
                 });
             } else {
                 audiotecaService.getTitles(this.state.index, audiotecaConstants.pageSize).then(result => {
                     this.setState({
-                        index: this.state.index + result.Titles.length,
+                        index: this.state.index + result.titles.length,
                         loading: false,
-                        Total: result.Total, 
-                        Titles: this.state.Titles.concat(result.Titles)
+                        Total: result.total, 
+                        Titles: this.state.Titles.concat(result.titles)
                     });
                 });
             }
@@ -54,10 +54,10 @@ export class ListByTitle extends React.Component {
             audiotecaService.getTitlesByAuthor(this.props.author, this.state.index, audiotecaConstants.pageSize)
                 .then(result => {
                     this.setState({
-                        index: this.state.index + result.Titles.length,
+                        index: this.state.index + result.titles.length,
                         loading: false,
-                        Total: result.Total, 
-                        Titles: this.state.Titles.concat(result.Titles)
+                        Total: result.total, 
+                        Titles: this.state.Titles.concat(result.titles)
                     });
                 });
         }
@@ -101,15 +101,15 @@ export class ListByTitle extends React.Component {
                             Titles.map((item, i) =>
                                 <div key={`block${i}`}>
                                     <ListItem button key={`item${i}`} onClick={() => this.switch(i)}>
-                                        <ListItemText primary={item.Title} />
+                                        <ListItemText primary={item.title} />
                                     </ListItem>
-                                    { expanded == i ? <BookDetails key={`details${i}`} id={item.Id}/> : '' }
+                                    { expanded == i ? <BookDetails key={`details${i}`} id={Number(item.id)}/> : '' }
                                 </div>
                             )
                         }
                         </List>:
                         <div>
-                            <div className="list__searchbox">
+                            {/* <div className="list__searchbox">
                                 <TextField
                                     fullWidth
                                     id="standard-search"
@@ -118,15 +118,15 @@ export class ListByTitle extends React.Component {
                                     margin="normal"
                                     onChange={this.searchChange}
                                     />
-                            </div>
+                            </div> */}
                             <List className="list list__item">
                             {
                                 Titles.map((item, i) =>
                                     <div key={`block${i}`}>
                                         <ListItem button key={`item${i}`} onClick={() => this.switch(i)}>
-                                            <ListItemText primary={item.Title} />
+                                            <ListItemText primary={item.title} />
                                         </ListItem>
-                                        { expanded == i ? <BookDetails key={`details${i}`} id={item.Id}/> : '' }
+                                        { expanded == i ? <BookDetails key={`details${i}`} id={Number(item.id)}/> : '' }
                                     </div>
                                 )
                             }

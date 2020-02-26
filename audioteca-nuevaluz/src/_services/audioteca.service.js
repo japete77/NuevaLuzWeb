@@ -18,7 +18,7 @@ function getTitles(index, count) {
         headers: { 'Content-Type': 'application/json' }
     };
 
-    return fetch(`${config.get('api_url')}/gettitles?index=${index}&count=${count}&session=${localStorage.getItem(audiotecaConstants.sessionKey)}`, requestOptions)
+    return fetch(`${config.get('api_url')}titles?index=${index}&count=${count}&session=${localStorage.getItem(audiotecaConstants.sessionKey)}`, requestOptions)
         .then(handleResponse)
         .then(response => {
             return response;
@@ -34,7 +34,7 @@ function getAuthors(index, count) {
         headers: { 'Content-Type': 'application/json' }
     };
 
-    return fetch(`${config.get('api_url')}/getauthors?index=${index}&count=${count}&session=${localStorage.getItem(audiotecaConstants.sessionKey)}`, requestOptions)
+    return fetch(`${config.get('api_url')}authors?index=${index}&count=${count}&session=${localStorage.getItem(audiotecaConstants.sessionKey)}`, requestOptions)
         .then(handleResponse)
         .then(response => {
             return response;
@@ -50,7 +50,7 @@ function getBookDetails(id) {
         headers: { 'Content-Type': 'application/json' }
     };
 
-    return fetch(`${config.get('api_url')}/getaudiobookdetail?id=${id}&session=${localStorage.getItem(audiotecaConstants.sessionKey)}`, requestOptions)
+    return fetch(`${config.get('api_url')}title/${id}?session=${localStorage.getItem(audiotecaConstants.sessionKey)}`, requestOptions)
         .then(handleResponse)
         .then(response => {
             return response;
@@ -66,7 +66,7 @@ function searchByTitle(text, index, count) {
         headers: { 'Content-Type': 'application/json' }
     };
 
-    return fetch(`${config.get('api_url')}/searchtitles?text=${text}&index=${index}&count=${count}&session=${localStorage.getItem(audiotecaConstants.sessionKey)}`, requestOptions)
+    return fetch(`${config.get('api_url')}searchtitles?text=${text}&index=${index}&count=${count}&session=${localStorage.getItem(audiotecaConstants.sessionKey)}`, requestOptions)
         .then(handleResponse)
         .then(response => {
             return response;
@@ -82,7 +82,7 @@ function searchByAuthor(text, index, count) {
         headers: { 'Content-Type': 'application/json' }
     };
 
-    return fetch(`${config.get('api_url')}/searchauthors?text=${text}&index=${index}&count=${count}&session=${localStorage.getItem(audiotecaConstants.sessionKey)}`, requestOptions)
+    return fetch(`${config.get('api_url')}searchauthors?text=${text}&index=${index}&count=${count}&session=${localStorage.getItem(audiotecaConstants.sessionKey)}`, requestOptions)
         .then(handleResponse)
         .then(response => {
             return response;
@@ -98,7 +98,7 @@ function getLink(id) {
         headers: { 'Content-Type': 'application/json' }
     };
 
-    return fetch(`${config.get('api_url')}/getaudiobooklink?id=${id}&session=${localStorage.getItem(audiotecaConstants.sessionKey)}`, requestOptions)
+    return fetch(`${config.get('api_url')}title/${id}/link?session=${localStorage.getItem(audiotecaConstants.sessionKey)}`, requestOptions)
         .then(handleResponse)
         .then(response => {
             return response;
@@ -114,7 +114,7 @@ function getTitlesByAuthor(id, index, count) {
         headers: { 'Content-Type': 'application/json' }
     };
 
-    return fetch(`${config.get('api_url')}/gettitlesbyauthor?id=${id}&index=${index}&count=${count}&session=${localStorage.getItem(audiotecaConstants.sessionKey)}`, requestOptions)
+    return fetch(`${config.get('api_url')}titles/author/${id}?index=${index}&count=${count}&session=${localStorage.getItem(audiotecaConstants.sessionKey)}`, requestOptions)
         .then(handleResponse)
         .then(response => {
             return response;

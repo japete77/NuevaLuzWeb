@@ -5,7 +5,7 @@ import lightBlue from '@material-ui/core/colors/lightBlue';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { history } from '../_helpers';
 
-import './Login.scss'
+import './ChangePassword.scss'
 import { userService } from '../_services/user.service.js';
 
 const theme = createMuiTheme({
@@ -20,7 +20,7 @@ const theme = createMuiTheme({
     }
 });
 
-export class Login extends React.Component {
+export class ChangePassword extends React.Component {
 
     constructor(props) {
         super(props);
@@ -34,24 +34,28 @@ export class Login extends React.Component {
 
         this.setState({ submitted: true });
         
-        // check username (must be a number)
-        var user = Number(this.refs.username.value);
-        user = (isNaN(user) ? -1: user);
-
-        var pass = this.refs.password.value;
+        // match checking
+        var matches = this.refs.password.value == this.refs.repassword.value;
+        if (!matches)
+        {
+            // clean up and focus in the password
+            this.setState({ submitted: false, open: true });
+            this.refs.password.value = '';
+            this.refs.repassword.value = '';
+            this.refs.password.focus();
+            return;
+        }
         
-        userService.login(user , this.refs.password.value)
+        userService.updatePassword(this.refs.password.value)
             .then(result => {
                 if (!result.success) {
                     // clean up and focus in the username
                     this.setState({ submitted: false, open: true });
-                    this.refs.username.value = '';
                     this.refs.password.value = '';
-                    this.refs.username.focus();
-                } else if (pass == '1234') {
-                    // navigate to home page
-                    window.location.href = '/change-password';
+                    this.refs.repassword.value = '';
+                    this.refs.password.focus();
                 } else {
+                    // navigate to home page
                     window.location.href = '/';
                 }
             });
@@ -75,7 +79,7 @@ export class Login extends React.Component {
                         <DialogTitle id="alert-dialog-title">{"Error de acceso"}</DialogTitle>
                         <DialogContent>
                             <DialogContentText id="alert-dialog-description">
-                            Usuario o contraseña no válidos
+                            Las contraseñas no coinciden
                             </DialogContentText>
                         </DialogContent>
                         <DialogActions>
@@ -86,7 +90,7 @@ export class Login extends React.Component {
                     </Dialog>
                     <form onSubmit={this.submit} className="form">
                         <div className="form__logo"></div>
-                        <div className="form__title">Acceso Fonoteca</div>
+                        <div className="form__title">Cambio de contraseña</div>
                         { 
                             submitted ? 
                             <div className="form__loading">
@@ -94,19 +98,19 @@ export class Login extends React.Component {
                             </div> :
                             <div>
                                 <div className="row row--centered">
-                                    <label className="form__label">Usuario</label>
-                                    <input className="form__input" type="text" required ref="username"/>
+                                    <label className="form__label-big">Nueva contraseña</label>
+                                    <input className="form__input-small" type="password" required ref="password"/>
                                 </div>
                                 <div className="row row--centered">
-                                    <label className="form__label">Contraseña</label>
-                                    <input className="form__input" type="password" required ref="password"/>
+                                    <label className="form__label-big">Repita contraseña</label>
+                                    <input className="form__input-small" type="password" required ref="repassword"/>
                                 </div>
                                 <div className="row row--centered">
                                     <Button className="form__enterButton"
                                         id="enter" 
                                         variant="contained"
                                         type="submit"
-                                        color="primary">Entrar</Button>
+                                        color="primary">Actualizar</Button>
                                 </div>
                             </div> 
                         }

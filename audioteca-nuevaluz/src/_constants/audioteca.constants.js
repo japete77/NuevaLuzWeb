@@ -1,4 +1,4 @@
 export const audiotecaConstants = {
     sessionKey: 'sessionKey',
-    pageSize: 25
+    pageSize: 99999
 }

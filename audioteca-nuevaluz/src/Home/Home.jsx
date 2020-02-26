@@ -53,7 +53,7 @@ export class Home extends React.Component {
                 <AppBar position="static" color="primary">
                     <Toolbar>
                         <Typography variant="h6" color="inherit">
-                            Audioteca Nueva Luz
+                            Fonoteca Nueva Luz
                         </Typography>
                     </Toolbar>
                 </AppBar>

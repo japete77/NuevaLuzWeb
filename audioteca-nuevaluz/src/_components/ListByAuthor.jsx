@@ -38,19 +38,19 @@ export class ListByAuthor extends React.Component {
         if (this.state.text) {
             audiotecaService.searchByAuthor(this.state.text, this.state.index, audiotecaConstants.pageSize).then(result => {
                 this.setState({
-                    index: this.state.index + result.Authors.length,
+                    index: this.state.index + result.authors.length,
                     loading: false,
-                    Total: result.Total, 
-                    Authors: this.state.Authors.concat(result.Authors)
+                    Total: result.total, 
+                    Authors: this.state.Authors.concat(result.authors)
                 });
             });
         } else {
             audiotecaService.getAuthors(this.state.index, audiotecaConstants.pageSize).then(result => {
                 this.setState({
-                    index: this.state.index + result.Authors.length,
+                    index: this.state.index + result.authors.length,
                     loading: false,
-                    Total: result.Total, 
-                    Authors: this.state.Authors.concat(result.Authors)
+                    Total: result.total, 
+                    Authors: this.state.Authors.concat(result.authors)
                 });
             });
         }
@@ -79,7 +79,7 @@ export class ListByAuthor extends React.Component {
         const { Total, Authors, loading, expanded } = this.state;
         return (
             <div>
-                <div className="list__searchbox">
+                {/* <div className="list__searchbox">
                     <TextField
                         fullWidth
                         id="standard-search"
@@ -88,15 +88,15 @@ export class ListByAuthor extends React.Component {
                         margin="normal"
                         onChange={this.searchChange}
                         />
-                </div>
+                </div> */}
                 <List className="list list__item" component="nav">
                 {
                     Authors.map((item, i) =>
                         <div key={`block${i}`}>
                             <ListItem button key={`item${i}`} onClick={() => this.switch(i)}>
-                                <ListItemText primary={item.Name} />
+                                <ListItemText primary={item.name} />
                             </ListItem>
-                            { expanded == i ? <ListByTitle key={`titles${i}`} author={item.Id}/> : '' }
+                            { expanded == i ? <ListByTitle key={`titles${i}`} author={Number(item.id)}/> : '' }
                         </div>
                     )
                 }
