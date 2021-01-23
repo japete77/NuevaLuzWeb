@@ -1,0 +1,41 @@
+@import '../_styles/_common.scss';
+@import '../_styles/_variables.scss';
+
+.list {
+    margin: auto !important;
+    max-width: 500px;
+    
+    &__item {
+        font-size: 1.2em;
+        
+        &>div:nth-child(odd) {
+            background-color: $list-item-odd-color;
+        }
+
+        &>div:nth-child(even) {
+            background-color: $list-item-even-color;
+        }
+
+        &--nested {
+            font-size: 1.2em;
+            padding: 0 !important;
+            
+            &>div:nth-child(odd) {
+                background-color: $list-item-odd-nested-color;
+                padding-left: 50px;
+            }
+    
+            &>div:nth-child(even) {
+                background-color: $list-item-even-color;
+                padding-left: 50px;
+            }
+        }
+    
+    }
+
+    &__searchbox {
+        max-width: 500px;
+        margin: auto;
+        padding: 0 10px 0 10px;
+    }
+}

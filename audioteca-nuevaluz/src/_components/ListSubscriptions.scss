@@ -1,0 +1,25 @@
+@import '../_styles/_common.scss';
+@import '../_styles/_variables.scss';
+
+.list {
+    margin: auto !important;
+    max-width: 500px;
+    
+    &__item {
+        font-size: 1.2em;
+        
+        &>div:nth-child(odd) {
+            background-color: $list-item-odd-color;
+        }
+
+        &>div:nth-child(even) {
+            background-color: $list-item-even-color;
+        }
+    }
+
+    &__searchbox {
+        max-width: 500px;
+        margin: auto;
+        padding: 0 10px 0 10px;
+    }
+}

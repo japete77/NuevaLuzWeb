@@ -9,6 +9,9 @@ export const audiotecaService = {
     searchByTitle,
     searchByAuthor,
     getLink,
+    getSubscriptions,
+    getSubscriptionTitles,
+    getSubscriptionTitleLink
 };
 
 function getTitles(index, count) {
@@ -115,6 +118,54 @@ function getTitlesByAuthor(id, index, count) {
     };
 
     return fetch(`${config.get('api_url')}titles/author/${id}?index=${index}&count=${count}&session=${localStorage.getItem(audiotecaConstants.sessionKey)}`, requestOptions)
+        .then(handleResponse)
+        .then(response => {
+            return response;
+        })
+        .catch(error => {
+            redirectToLogin();
+        });
+}
+
+function getSubscriptions() {
+    const requestOptions = {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+    };
+
+    return fetch(`${config.get('api_url')}subscriptions?session=${localStorage.getItem(audiotecaConstants.sessionKey)}`, requestOptions)
+        .then(handleResponse)
+        .then(response => {
+            return response;
+        })
+        .catch(error => {
+            redirectToLogin();
+        });
+}
+
+function getSubscriptionTitles(code) {
+    const requestOptions = {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+    };
+
+    return fetch(`${config.get('api_url')}subscriptions/titles?code=${code}&session=${localStorage.getItem(audiotecaConstants.sessionKey)}`, requestOptions)
+        .then(handleResponse)
+        .then(response => {
+            return response;
+        })
+        .catch(error => {
+            redirectToLogin();
+        });
+}
+
+function getSubscriptionTitleLink(id) {
+    const requestOptions = {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+    };
+
+    return fetch(`${config.get('api_url')}subscription/title/${id}/link?session=${localStorage.getItem(audiotecaConstants.sessionKey)}`, requestOptions)
         .then(handleResponse)
         .then(response => {
             return response;
