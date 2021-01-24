@@ -9,6 +9,7 @@ import {
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import PersonIcon from "@material-ui/icons/Person";
 import BookIcon from "@material-ui/icons/Book";
+import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
 import { ListByTitle, ListByAuthor, ListSubscriptions } from "../_components";
 
 import "./Home.scss";
@@ -65,7 +66,7 @@ export class Home extends React.Component {
         <BottomNavigation value={value} onChange={this.handleChange} showLabels>
           <BottomNavigationAction label="Por Título" icon={<BookIcon />} />
           <BottomNavigationAction label="Por Autor" icon={<PersonIcon />} />
-          <BottomNavigationAction label="Suscripciones" icon={<PersonIcon />} />
+          <BottomNavigationAction label="Suscripciones" icon={<PlaylistAddCheckIcon />} />
         </BottomNavigation>
         {value === 0 ? (
           <ListByTitle />
